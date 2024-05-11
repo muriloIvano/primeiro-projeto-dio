@@ -20,8 +20,26 @@ public class ContaTerminal {
     System.out.println("Digite seu saldo:");
     ContaBanco.saldo = scanner.nextDouble();
 
-
+    System.out.println("===========================================");
     ContaBanco.mostrarValores();
+    System.out.println("===========================================");
+
+    System.out.println("Digite [1] para realizar um saque e [2] para realizar um depósito:");
+    int opcao = scanner.nextInt();
+
+    if (opcao == 1) {
+        System.out.println("Digite o valor do saque:");
+        int saque = scanner.nextInt();
+        ContaBanco.saldo = ContaBanco.saldo - saque;
+    } else {
+          System.out.println("Digite o valor do depósito:"); 
+          double deposito = scanner.nextDouble();
+          
+          ContaBanco.saldo = ContaBanco.saldo + deposito;
+    }
+    System.out.println("==================================");
+    System.out.println("Saldo em conta atualizado: R$"+ ContaBanco.saldo);
+    System.out.println("==================================");
 
 }
 }
